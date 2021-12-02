@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <title>Alpaca voice test!</title>
+  
+    <style>
+        button {
+                width: 35px;
+                height: 35px;
+                font-size: 0;
+                background-color: red;
+                border: 0;
+                border-radius: 35px;
+                margin: 18px;
+                outline: none;
+        }
+
+        .notRec{
+                background-color: darkred;
+        }
+
+        .Rec{
+                animation-name: pulse;
+                animation-duration: 1.5s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+        }
+
+        @keyframes pulse{
+                0%{
+                        box-shadow: 0px 0px 5px 0px rgba(173,0,0,.3);
+                }
+                65%{
+                        box-shadow: 0px 0px 5px 13px rgba(173,0,0,.3);
+                }
+                90%{
+                        box-shadow: 0px 0px 5px 13px rgba(173,0,0,0);
+                }
+        }
+
+        .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+        }
+        .mybutton {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 2px 2px;
+            cursor: pointer;
+            }
+
+        .button1 {background-color: #4CAF50;} /* Green */
+        .button2 {background-color: #008CBA;} /* Blue */
+</style>
+    </style>
+
+  
+
+    
+
+  </head>
+  <body>
+    <div class="header">
+      <h1>تست صوتی آلپاکا</h1>
+    </div>
+
+    
+    <div class="container">
+    <div class="row">
+        <div class="col-sm">    
+            <div id="PlayStory">  
+            <p dir="rtl"> فایل صوتی زیر رو پلی کنید و به دقت بشنوید. </p>
+            <audio controls id="PlayFirst" onplay="doDisappear()" onended="doRecording()">
+                
+                <source src="story2.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            
+            </audio>
+            </div>
+            <div id="RecordingSession" hidden>
+               <div id="RecordButtons">
+                    <!--button for 'start recording'-->
+                    <p dir="rtl"> دکمه ضبط صدا رو بزنید و سعی کنید بخشی از داستان رو که شنیدید، تا آنجا که در خاطر دارید بازگو کنید. </p>
+                    <p>
+                            <button id="btnStart" class="notRec" onclick="MyElTimeout = 20000">START RECORDING</button>
+
+                            <button id="btnStop" class="Rec" hidden>STOP RECORDING</button>
+                            <label id="minutes">00</label>:<label id="seconds">00</label>
+                            <!--button for 'stop recording'-->
+                    </p>
+
+                </div>
+                <!--for record-->
+                <audio id="RecordEl" controls hidden muted></audio>
+                <!--'controls' use for add
+                        play, pause, and volume-->
+
+
+                <div id="AfterRecord" hidden>    
+                    <p dir="rtl"> صدایی که ضبط کردید رو می‌تونید اینجا بشنوید. برای مرحله بعد دکمه «ادامه» رو بزنید. </p>
+                    <!--for play the audio -->
+                    <audio id="adioPlay" controls hidden></audio>
+                    </br>
+                    <button class="mybutton button1" style="width:50%" onclick="NextPage()">  ادامه  </button>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+            <div class="col-sm">
+            
+            </div>
+            <div class="col-sm">
+            
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+    <script>
+        function doDisappear() {
+            var x = document.getElementById("PlayFirst");
+            if (x.style.display === "none") {
+            x.style.display = "block";
+            } else {
+            x.style.display = "none";
+            }
+        }
+        function doRecording() {
+            var RecSess = document.getElementById("RecordingSession");
+            RecSess.hidden = false;
+            var PlaySess = document.getElementById("PlayStory");
+            PlaySess.hidden = true;
+        }
+        function NextPage() {
+            location.replace("https://nbicproject.ir/story1.html")
+        }
+    </script>
+    <script>
+
+        let audioIN = { audio: true };
+        // audio is true, for recording
+
+        // Access the permission for use
+        // the microphone
+        navigator.mediaDevices.getUserMedia(audioIN)
+
+        // 'then()' method returns a Promise
+        .then(function (mediaStreamObj) {
+
+                // Connect the media stream to the
+                // first audio element
+                let audio = document.getElementById('RecordEl');
+                //returns the recorded audio via 'audio' tag
+
+                // 'srcObject' is a property which
+                // takes the media object
+                // This is supported in the newer browsers
+                if ("srcObject" in audio) {
+                audio.srcObject = mediaStreamObj;
+                }
+                else { // Old version
+                audio.src = window.URL
+                        .createObjectURL(mediaStreamObj);
+                }
+
+                // It will play the audio
+                audio.onloadedmetadata = function (ev) {
+
+                // Play the audio in the 2nd audio
+                // element what is being recorded
+                audio.play();
+                };    
+                // Start record
+                let start = document.getElementById('btnStart');
+
+                // Stop record
+                let stop = document.getElementById('btnStop');
+
+                // 2nd audio tag for play the audio
+                let playAudio = document.getElementById('adioPlay');
+
+                // This is the main thing to recorde
+                // the audio 'MediaRecorder' API
+                let mediaRecorder = new MediaRecorder(mediaStreamObj);
+                
+                //This is recording buttons element
+                let RecButt = document.getElementById('RecordButtons');
+                //After record element
+                let AftRec = document.getElementById('AfterRecord');
+                // Pass the audio stream
+
+                // Start event
+                start.addEventListener('click', function (ev) {
+                    mediaRecorder.start();
+                    //console.log(mediaRecorder.state);
+                    start.hidden = true;
+                    stop.hidden = false;
+                    
+                    //Count down for recording
+                    setTimeout(StratCountdown, MyElTimeout);
+
+                    //Start count up timer for recording
+                    var minutesLabel = document.getElementById("minutes");
+                    var secondsLabel = document.getElementById("seconds");
+                    var totalSeconds = 0;
+                    setInterval(setTime, 1000);
+
+                    function setTime() {
+                    ++totalSeconds;
+                    secondsLabel.innerHTML = pad(totalSeconds % 60);
+                    minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+                    }
+
+                    function pad(val) {
+                    var valString = val + "";
+                    if (valString.length < 2) {
+                        return "0" + valString;
+                    } else {
+                        return valString;
+                    }
+                    }                   
+                    
+                })
+
+                // Stop auto by countdown
+                function StratCountdown() {
+                  mediaRecorder.stop();
+                  // console.log(mediaRecorder.state);
+                  start.hidden = false;
+                  stop.hidden = true;
+                  playAudio.hidden = false;
+                  RecButt.hidden = true;
+                  AftRec.hidden = false;
+                }
+
+                // Stop event
+                stop.addEventListener('click', function (ev) {
+                mediaRecorder.stop();
+                // console.log(mediaRecorder.state);
+                 start.hidden = false;
+                 stop.hidden = true;
+                 playAudio.hidden = false;
+                 RecButt.hidden = true;
+                 AftRec.hidden = false;
+
+                });  
+                // If audio data available then push
+                // it to the chunk array
+                mediaRecorder.ondataavailable = function (ev) {
+                dataArray.push(ev.data);
+                }
+
+                // Chunk array to store the audio data
+                let dataArray = [];
+
+                // Convert the audio data in to blob
+                // after stopping the recording
+                mediaRecorder.onstop = function (ev) {
+
+                // blob of type mp3
+                let audioData = new Blob(dataArray,
+                                        { 'type': 'audio/mp3;' });
+
+                // After fill up the chunk
+                // array make it empty
+                dataArray = [];
+
+
+                // Creating audio url with reference
+                // of created blob named 'audioData'
+                let audioSrc = window.URL
+                        .createObjectURL(audioData);
+
+                // Pass the audio url to the 2nd video tag
+                playAudio.src = audioSrc;
+                }
+        })
+
+        // If any error occurs then handles the error
+        .catch(function (err) {
+                console.log(err.name, err.message);
+        });
+
+     </script>
+     
+     <script>
+
+     </script>
+
+  </body>
+</html>
+
+
+
+
