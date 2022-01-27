@@ -1,5 +1,6 @@
 .start-button{
-    background-color: #FFBF00;
-    border: none;
+    background-color: #FFBF00 !important;
+    border: none !important;
     width: 150px;
+    border-radius: 10px !important;
 }

@@ -5,7 +5,7 @@ import './FormComponents.css';
 
 export default function FormComponents() {
     return(
-        <div className='text-center' dir='rtl'>
+        <div className='text-center'>
             <br/>
             <Form>
                 <Form.Check

@@ -8,8 +8,8 @@ import './Instructions.css';
 export default function Instructions() {
 
     return (
-        <div className='instructions-main'>
-            <Card className='mb-3 main-card'>
+        <div className="instructions-main">
+            <Card className="mb-3 main-card">
                 <Card.Body>
                     <InstructionsCard/ >
                     <FormComponents/ >

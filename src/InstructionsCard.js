@@ -1,9 +1,11 @@
 import React from "react";
 import {Card} from 'react-bootstrap';
 
+import './InstructionsCard.css';
+
 export default function InstructionsCard() {
     return (
-        <Card className="text-right" dir="rtl">
+        <Card className="inst-lines text-right" dir="rtl">
         <Card.Body>
         <Card.Text>
        شرکت کننده گرامی، ضمن تشکر از همکاری شما، روند تست پیش رو مطابق زیر می‌باشد. خواهشمند است پس از مطالعه دقیق، با انتخاب گزینه "قوانین را مطالعه کرده‌ام" و سپس فشردن دکمه "شرکت در تست"، تست را شروع نمایید. <br/><br/>
