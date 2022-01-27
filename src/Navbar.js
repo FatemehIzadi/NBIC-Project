@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navbar, Container, Nav, Card} from 'react-bootstrap';
+import {Navbar, Container, Nav} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image'
 
 import './Navbar.css';
