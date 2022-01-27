@@ -1,7 +1,11 @@
-.App {
+.nbicApp {
   text-align: center;
-  /* background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/93/TehranUniversityEntrancePanorama.jpg'); */
-  background-color: #282c34;
+  position: relative; 
+  display: block;
+  height: 100vh;
+  width:100%;
+  background-image: url('./images/utgateT.png');
+  background-size: cover;
 }
 
 .App-logo {

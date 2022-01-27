@@ -2,14 +2,16 @@ import React from "react";
 import {Card, Button, InputGroup, FormControl, Form} from 'react-bootstrap';
 import InstructionsCard from "./InstructionsCard";
 
+import './Instructions.css';
+ 
 export default function Instructions() {
 
 
    var isActive = true;
 
     return (
-        <div>
-            <Card className="mb-3 main-card">
+        <div className='instructions-main'>
+            <Card className="mb-3 main-weather-card">
                 <Card.Body>
                     <InstructionsCard/ >
                 </Card.Body>
