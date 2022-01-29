@@ -3,8 +3,23 @@ import {Form, Button} from 'react-bootstrap';
 
 import './FormComponents.css';
 
-export default function FormComponents() {
-    return(
+class FormComponents extends React.Component {
+    
+    state = {
+        disabled : true
+    }
+
+    handleCheck(event) {
+        if(event.target.checked) {
+            this.setState(
+                {
+                    disabled : false
+                }
+            );
+        }
+    }
+    render() {
+        return(
         <div className='text-center'>
             <br/>
             <Form>
@@ -12,14 +27,17 @@ export default function FormComponents() {
                     inline
                     type="checkbox"
                     label= "قوانین را مطالعه کرده‌ام و می‌پذیرم"
-                    // onChange={(event) => this.handleCheck(event)}
+                    onChange={(event) => this.handleCheck(event)}
                 />   
+               
+
                 <br/>
-                {/* { isActive ?  */}
                 <br/>
-                <Button className='start-button'> شرکت در تست </Button>
-                {/* : null } */}
-            </Form>
+
+                <Button className='start-button' disabled = {this.state.disabled} href = 'https://google.com'> شرکت در تست </Button>
+           </Form>
             </div>
     );
-}
+        }
+    }
+export default FormComponents;
