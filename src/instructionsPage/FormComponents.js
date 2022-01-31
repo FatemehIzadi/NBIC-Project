@@ -36,17 +36,15 @@ class FormComponents extends React.Component {
 
                 <br/>
                 <br/>
-        {/* <BrowserRouter> */}
            <Link to="/playVoice">
                 <Button className='start-button' disabled = {this.state.disabled}> شرکت در تست </Button>            
            </Link>
-        {/* </BrowserRouter>   */}
 
         <Routes>
                <Route path='/playVoice' element={<PlayVoice />} />
         </Routes >
            </Form>
-           
+            
             </div>
     );
         }
