@@ -3,6 +3,7 @@ import NavigationBar from './Navbar';
 import Instructions from './instructionsPage/Instructions';
 import PlayVoice from './playVoicePage/PlayVoice';
 import RecordVoice from './recordVoice/RecordVoice';
+import ThankYou from './thankYou/ThankYou';
 
 
 import {BrowserRouter, Link, Routes , Route } from 'react-router-dom';
@@ -20,7 +21,7 @@ function App() {
             <Route path='/' exact element={<Instructions/>} />
             <Route path='/playVoice' element={<PlayVoice />} />
             <Route path='/recordVoice' element={<RecordVoice />} />
-            <Route path='/thanks' element={<RecordVoice />} />
+            <Route path='/thanks' element={<ThankYou />} />
       </Routes>
       
       {/* <RecordVoice /> */}
