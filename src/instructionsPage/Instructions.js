@@ -1,23 +1,29 @@
 import React from "react";
 import {Card} from 'react-bootstrap';
 import InstructionsCard from "./InstructionsCard";
-import FormComponents from "./FormComponents";
 
 import './Instructions.css';
  
-export default function Instructions() {
+class Instructions extends React.Component {
+
+    render () {
 
     return (
-        <div className="instructions-main">
-            <Card className="mb-3 main-card">
+        <div className="instructions-main"
+        //   hidden
+        //    = {this.props.hidden}
+         >
+            <Card className="mb-3 main-instructions-card">
                 <Card.Body>
                     <InstructionsCard/ >
-                    <FormComponents/ >
                 </Card.Body> 
             </Card>
         </div>
 
     );
+    }
 }
+export default Instructions;
+
 
    

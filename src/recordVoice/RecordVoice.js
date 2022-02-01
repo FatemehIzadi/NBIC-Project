@@ -1,8 +1,8 @@
 import React from "react";
-import NavigationBar from "../Navbar";
-import ReactAudioPlayer from 'react-audio-player';
-import AudioReactRecorder, { RecordState } from 'audio-react-recorder'
+import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
+import {Card, Button} from 'react-bootstrap';
 
+import './RecordVoice.css'
 
 class RecordVoice extends React.Component {
     constructor(props) {
@@ -34,30 +34,42 @@ class RecordVoice extends React.Component {
 
     return(
         <div>
-            <NavigationBar />
-            <p dir="rtl"> فایل صوتی زیر رو پلی کنید و به دقت بشنوید. </p>
-            {/* <div id="PlayStory">  
-            <p dir="rtl"> فایل صوتی زیر رو پلی کنید و به دقت بشنوید. </p>
-            <audio controls id="PlayFirst" onplay="doDisappear()" onended="doRecording()">
-                
-                <source src="story1.mp3" type="audio/mpeg">
-                Your browser does not support the audio element.
-            
-            </audio>
-            </div> */}
-            {/* <ReactAudioPlayer
-                src='../voice/story1.html'
-                autoPlay
-                controls
-            /> */}
-            {/* <Recorder/> */}
+        <div className="recordVoice-main">
+        <Card className="mb-3 main-recordVoice-card text-center">
+            <Card.Body>
+                <div className='voiceRecorder'
+                // hidden
+                // = {this.props.hideVoiceRecorder}
+                >
+                <p dir="rtl">
+                   دکمه ضبط صدا رو بزنید و سعی کنید بخشی از داستان رو که شنیدید، تا آنجا که در خاطر دارید بازگو کنید.
+                </p>            
+                <AudioReactRecorder 
+                state={recordState} 
+                onStop={this.onStop} 
+                />
+                <Button 
+                onClick={this.start}
+                hidden
+                ={this.props.hidden}
+                >
+                شروع
+                </Button>
+                <Button 
+                onClick={this.stop}
+                hidden
+                ={this.props.hidden}
+                >
+                پایان
+                </Button>
+            </div>
+            </Card.Body> 
+        </Card>
+    </div>
 
-            
-        <AudioReactRecorder state={recordState} onStop={this.onStop} />
- 
- <button onClick={this.start}>Start</button>
- <button onClick={this.stop}>Stop</button>
         </div>
+
+
 
     );
         }

@@ -1,10 +1,12 @@
 import React from "react";
 import {Card} from 'react-bootstrap';
+import FormComponents from "./FormComponents";
 
 import './InstructionsCard.css';
 
 export default function InstructionsCard() {
     return (
+        <div>
         <Card className="inst-lines text-right" dir="rtl">
         <Card.Body>
         <Card.Text>
@@ -18,5 +20,8 @@ export default function InstructionsCard() {
         </Card.Text>
         </Card.Body>
         </Card>
+
+        <FormComponents />
+        </div>
     );
 }
