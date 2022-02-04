@@ -21,7 +21,8 @@ p {
   }
 
 
-Button {
+.recordButton,
+.stopButton {
     background-color: #FFBF00 !important;
     border: none !important;
     width: 100px;

@@ -17,5 +17,12 @@
 }
 
 p {
-    text-align: center;
+    text-align: right;
   }
+
+.playButton {
+    background-color: #FFBF00 !important;
+    border: none !important;
+    width: 100px;
+    border-radius: 10px !important;
+}

@@ -2,12 +2,12 @@
 
 
 .instructions-main{
-    padding-top: .5em;
+    /* padding-top: -2 em; */
     font-family: 'IBM Plex Sans Arabic', sans-serif;
 }
 
 .main-instructions-card{
-    padding: 2em;
+    /* padding: 2em; */
     margin:6rem auto;
     width: 60%;
     background-color: rgb(60, 128, 232, 70%) !important;

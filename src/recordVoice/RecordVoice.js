@@ -48,14 +48,14 @@ class RecordVoice extends React.Component {
                 state={recordState} 
                 onStop={this.onStop} 
                 />
-                <Button 
+                <Button className='recordButton'
                 onClick={this.start}
                 hidden
                 ={this.props.hidden}
                 >
                 شروع
                 </Button>
-                <Button 
+                <Button className='stopButton'
                 onClick={this.stop}
                 hidden
                 ={this.props.hidden}
