@@ -1,5 +1,5 @@
 import React from "react";
-import {Card} from 'react-bootstrap';
+import {Card, Container, Row, Col} from 'react-bootstrap';
 import InstructionsCard from "./InstructionsCard";
 
 import './Instructions.css';
@@ -9,17 +9,24 @@ class Instructions extends React.Component {
     render () {
 
     return (
-        <div className="instructions-main"
+        <div 
+        // className='py-auto'
+        >
+        <Container>
+        <Row className="my-5 instructions-main"
         //   hidden
         //    = {this.props.hidden}
          >
-            <Card className="mb-3 main-instructions-card">
+             <Col>
+            <Card className="main-instructions-card">
                 <Card.Body>
                     <InstructionsCard/ >
                 </Card.Body> 
             </Card>
-        </div>
-
+            </Col>
+        </Row>
+        </Container>
+</div>
     );
     }
 }

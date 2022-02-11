@@ -7,9 +7,9 @@ import './InstructionsCard.css';
 export default function InstructionsCard() {
     return (
         <div>
-        <Card className="inst-lines" dir="rtl">
+        <Card className="inst-lines">
         <Card.Body>
-        <Card.Text className='text-right'>
+        <Card.Text className='text-right' dir='rtl'>
        شرکت کننده گرامی، ضمن تشکر از همکاری شما، روند تست پیش رو مطابق زیر می‌باشد. خواهشمند است پس از مطالعه دقیق، با انتخاب گزینه "قوانین را مطالعه کرده‌ام" و سپس فشردن دکمه "شرکت در تست"، تست را شروع نمایید. <br/><br/>
 
         ۱- در این تست یک فایل صوتی برای شما پخش خواهد شد که پس از فشردن دکمه پخش قابلیت توقف و بازگشت به عقب را نخواهد داشت، پس قبل از شروع تست تلاش کنید در محیطی با کمترین میزان مزاحمت بیرونی قرار بگیرید.<br/><br/>
