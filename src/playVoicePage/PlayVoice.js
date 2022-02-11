@@ -15,29 +15,23 @@ class PlayVoice extends React.Component {
         isPlaying: false,
       };
     
-      // Main function to handle both play and pause operations
       playPause = () => {
     
-        // Get state of song
         let isPlaying = this.state.isPlaying;
     
         if (isPlaying) {
-          // Pause the song if it is playing
           this.state.audio.pause();
         } else {
     
-          // Play the song if it is paused
           this.state.audio.play();
         }
-    
-        // Change the state of song
         this.setState({ isPlaying: !isPlaying });
       };
 
     render() {
     return(
         <div className="playVoice-main">
-        <Card className="mb-3 main-playVoice-card text-center">
+        <Card className="main-playVoice-card text-center">
             <Card.Body>
                 <div className='voicePlayer'
                 // hidden
