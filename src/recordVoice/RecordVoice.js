@@ -41,7 +41,7 @@ class RecordVoice extends React.Component {
                 // hidden
                 // = {this.props.hideVoiceRecorder}
                 >
-                <p dir="rtl">
+                <p className='text-center' dir="rtl">
                    دکمه ضبط صدا رو بزنید و سعی کنید بخشی از داستان رو که شنیدید، تا آنجا که در خاطر دارید بازگو کنید.
                 </p>            
                 <AudioReactRecorder 

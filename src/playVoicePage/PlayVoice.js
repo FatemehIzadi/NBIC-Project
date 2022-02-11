@@ -43,7 +43,7 @@ class PlayVoice extends React.Component {
             {!this.state.isPlaying &&
             
             <div>
-              <p dir="rtl"> 
+              <p className="text-center" dir="rtl"> 
             با فشردن دکمه پخش، فایل صوتی را بادقت بشنوید. 
               </p> 
 
