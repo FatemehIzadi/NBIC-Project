@@ -13,7 +13,7 @@ class Instructions extends React.Component {
         // className='py-auto'
         >
         <Container>
-        <Row className="my-5 instructions-main"
+        <Row className="my-3 instructions-main"
         //   hidden
         //    = {this.props.hidden}
          >

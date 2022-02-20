@@ -1,12 +1,8 @@
 import React from "react";
-import NavigationBar from "../Navbar";
-import ReactAudioPlayer from 'react-audio-player';
-import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
 import Story from '../voice/story1.mp3';
 import {Card, Button, Image} from 'react-bootstrap';
 
 import './PlayVoice.css';
-
 
 class PlayVoice extends React.Component {
 
@@ -16,13 +12,10 @@ class PlayVoice extends React.Component {
       };
     
       playPause = () => {
-    
         let isPlaying = this.state.isPlaying;
-    
         if (isPlaying) {
           this.state.audio.pause();
         } else {
-    
           this.state.audio.play();
         }
         this.setState({ isPlaying: !isPlaying });
@@ -41,20 +34,18 @@ class PlayVoice extends React.Component {
 
               
             {!this.state.isPlaying &&
-            
             <div>
               <p className="text-center" dir="rtl"> 
             با فشردن دکمه پخش، فایل صوتی را بادقت بشنوید. 
               </p> 
-
-              
-
               <Button className='playButton' onClick={this.playPause}>
                 پخش
               </Button> 
-
               </div>
               }
+
+
+
 
 
             <br />

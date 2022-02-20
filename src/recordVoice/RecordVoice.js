@@ -1,7 +1,8 @@
 import React from "react";
 import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
 import {Card, Button} from 'react-bootstrap';
-
+import { Link } from 'react-router-dom';
+ 
 import './RecordVoice.css'
 
 class RecordVoice extends React.Component {
@@ -12,7 +13,7 @@ class RecordVoice extends React.Component {
           recordState: null
         }
       }
-     
+    
       start = () => {
         this.setState({
           recordState: RecordState.START
@@ -48,6 +49,7 @@ class RecordVoice extends React.Component {
                 state={recordState} 
                 onStop={this.onStop} 
                 />
+                {this.state.recordState===null &&
                 <Button className='recordButton'
                 onClick={this.start}
                 hidden
@@ -55,6 +57,10 @@ class RecordVoice extends React.Component {
                 >
                 شروع
                 </Button>
+               }
+                {this.state.recordState===RecordState.START &&
+                <div>
+                <Link to='/thankYou'>
                 <Button className='stopButton'
                 onClick={this.stop}
                 hidden
@@ -62,6 +68,18 @@ class RecordVoice extends React.Component {
                 >
                 پایان
                 </Button>
+                </Link>
+                <br/>
+                <br/>
+                <Button className='recordButton'
+                onClick={this.start}
+                hidden
+                ={this.props.hidden}
+                >
+                 شروع مجدد
+                </Button>
+                </div>
+               }
             </div>
             </Card.Body> 
         </Card>
