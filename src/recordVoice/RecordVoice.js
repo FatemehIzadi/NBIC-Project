@@ -36,7 +36,7 @@ class RecordVoice extends React.Component {
     return(
         <div>
         <div className="recordVoice-main">
-        <Card className="mb-3 main-recordVoice-card text-center">
+        <Card className="my-3 main-recordVoice-card text-center">
             <Card.Body>
                 <div className='voiceRecorder'
                 // hidden
