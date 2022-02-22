@@ -1,12 +1,6 @@
 import React from "react";
-import {Form, Button} from 'react-bootstrap';
-import {
-    // BrowserRouter, 
-    Link
-    // , Routes , Route
- } from 'react-router-dom';
-
-// import PlayVoice from "../playVoicePage/PlayVoice";
+import { Form, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './FormComponents.css';
 

@@ -12,6 +12,7 @@ class RecordVoice extends React.Component {
         this.state = {
           recordState: null
         }
+        this.backgroundColor = {}
       }
     
       start = () => {
@@ -36,7 +37,7 @@ class RecordVoice extends React.Component {
     return(
         <div>
         <div className="recordVoice-main">
-        <Card className="my-3 main-recordVoice-card text-center">
+        <Card className="main-recordVoice-card text-center">
             <Card.Body>
                 <div className='voiceRecorder'
                 // hidden
@@ -48,6 +49,8 @@ class RecordVoice extends React.Component {
                 <AudioReactRecorder 
                 state={recordState} 
                 onStop={this.onStop} 
+                canvasWidth = '120%'
+                canvasHeight = '20%'
                 />
                 {this.state.recordState===null &&
                 <Button className='recordButton'
@@ -78,9 +81,19 @@ class RecordVoice extends React.Component {
                 >
                  شروع مجدد
                 </Button>
+
+                {/* <audio
+                id='audio'
+                controls
+                src={this.state.audioData ? this.state.audioData.url : null}
+                >
+                  hhh
+                </audio> */}
+
                 </div>
                }
             </div>
+
             </Card.Body> 
         </Card>
     </div>

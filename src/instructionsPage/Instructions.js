@@ -9,11 +9,10 @@ class Instructions extends React.Component {
     render () {
 
     return (
-        <div 
-        // className='py-auto'
-        >
+        <div className="instructions-main">
         <Container>
-        <Row className="my-3 instructions-main"
+        <Row 
+        className="my-3"
         //   hidden
         //    = {this.props.hidden}
          >
@@ -26,7 +25,7 @@ class Instructions extends React.Component {
             </Col>
         </Row>
         </Container>
-</div>
+        </div>
     );
     }
 }
