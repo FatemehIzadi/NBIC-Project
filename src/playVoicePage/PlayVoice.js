@@ -60,7 +60,7 @@ class PlayVoice extends React.Component {
                 <Image 
                 src={require('../images/playGif.gif')} 
                 alt="voice" 
-                width="200"
+                width="120"
                 className="mx-auto d-block" alt="Responsive image"
                 />
             </div>

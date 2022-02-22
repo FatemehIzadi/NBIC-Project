@@ -1,5 +1,6 @@
 import React from "react";
 import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
+import ReactAudioPlayer from 'react-audio-player';
 import {Card, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
  
@@ -8,9 +9,9 @@ import './RecordVoice.css'
 class RecordVoice extends React.Component {
     constructor(props) {
         super(props)
-     
         this.state = {
-          recordState: null
+          recordState: null,
+          audioData: null
         }
         this.backgroundColor = {}
       }
