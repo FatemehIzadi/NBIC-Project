@@ -1,7 +1,7 @@
 import React from "react";
 import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
 import ReactAudioPlayer from 'react-audio-player';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
  
 import './RecordVoice.css'
@@ -13,7 +13,10 @@ class RecordVoice extends React.Component {
           recordState: null,
           audioData: null
         }
-        this.backgroundColor = {}
+        // ,
+        // this.currState = {
+        //   isRecording: false
+        // }
       }
     
       start = () => {
@@ -28,10 +31,13 @@ class RecordVoice extends React.Component {
         })
       }
      
-      //audioData contains blob and blobUrl
-      onStop = (audioData) => {
-        console.log('audioData', audioData)
+      onStop = (data) => {
+        this.setState({
+          audioData: data
+        })
+        console.log('onStop: audio data', data)
       }
+
     render() {
         const { recordState } = this.state
 
@@ -44,16 +50,20 @@ class RecordVoice extends React.Component {
                 // hidden
                 // = {this.props.hideVoiceRecorder}
                 >
-                <p className='text-center' dir="rtl">
-                   دکمه ضبط صدا رو بزنید و سعی کنید بخشی از داستان رو که شنیدید، تا آنجا که در خاطر دارید بازگو کنید.
-                </p>            
+                
                 <AudioReactRecorder 
                 state={recordState} 
                 onStop={this.onStop} 
-                canvasWidth = '120%'
-                canvasHeight = '20%'
+                canvasWidth = '0'
+                canvasHeight = '0'
+                hidden = {recordState!==RecordState.STOP}
                 />
+
                 {this.state.recordState===null &&
+                <div>
+                <p className='text-center' dir="rtl">
+                   دکمه ضبط صدا رو بزنید و سعی کنید بخشی از داستان رو که شنیدید، تا آنجا که در خاطر دارید بازگو کنید.
+                </p>     
                 <Button className='recordButton'
                 onClick={this.start}
                 hidden
@@ -61,18 +71,36 @@ class RecordVoice extends React.Component {
                 >
                 شروع
                 </Button>
+                </div>
                }
+               
                 {this.state.recordState===RecordState.START &&
                 <div>
-                <Link to='/thankYou'>
+                <Image 
+                src={require('../images/recordGif.gif')} 
+                alt="voice" 
+                width="120"
+                className="mx-auto d-block" alt="Responsive image"
+                />
                 <Button className='stopButton'
                 onClick={this.stop}
-                hidden
-                ={this.props.hidden}
                 >
-                پایان
+               پایان
                 </Button>
-                </Link>
+                <br/>
+                <br/>
+                </div>
+               }
+
+                {this.state.recordState===RecordState.STOP &&
+                <div>
+                <audio
+                id='audio'
+                controls
+                src={this.state.audioData ? this.state.audioData.url : null}
+                >
+                </audio>
+                
                 <br/>
                 <br/>
                 <Button className='recordButton'
@@ -82,17 +110,18 @@ class RecordVoice extends React.Component {
                 >
                  شروع مجدد
                 </Button>
-
-                {/* <audio
-                id='audio'
-                controls
-                src={this.state.audioData ? this.state.audioData.url : null}
+                <br/>
+                <br/>
+                <Link to='/thankYou'>
+                  <Button className='sendButton'
                 >
-                  hhh
-                </audio> */}
-
+               ارسال
+                </Button>
+                </Link>
+                
                 </div>
-               }
+                }
+ 
             </div>
 
             </Card.Body> 
@@ -100,11 +129,79 @@ class RecordVoice extends React.Component {
     </div>
 
         </div>
-
-
-
     );
         }
 }
 
 export default RecordVoice;
+
+// import React from 'react'
+
+// import AudioReactRecorder, { RecordState } from 'audio-react-recorder'
+// import 'audio-react-recorder/dist/index.css'
+
+// class RecordVoice extends React.Component {
+//   constructor(props) {
+//     super(props)
+
+//     this.state = {
+//       recordState: null,
+//       audioData: null
+//     }
+//   }
+
+//   start = () => {
+//     this.setState({
+//       recordState: RecordState.START
+//     })
+//   }
+
+//   pause = () => {
+//     this.setState({
+//       recordState: RecordState.PAUSE
+//     })
+//   }
+
+//   stop = () => {
+//     this.setState({
+//       recordState: RecordState.STOP
+//     })
+//   }
+
+//   onStop = (data) => {
+//     this.setState({
+//       audioData: data
+//     })
+//     console.log('onStop: audio data', data)
+//   }
+
+//   render() {
+//     const { recordState } = this.state
+
+//     return (
+//       <div>
+//         <AudioReactRecorder
+//           state={recordState}
+//           onStop={this.onStop}
+//           backgroundColor='rgb(255,255,255)'
+//         />
+//         <audio
+//           id='audio'
+//           controls
+//           src={this.state.audioData ? this.state.audioData.url : null}
+//         ></audio>
+//         <button id='record' onClick={this.start}>
+//           Start
+//         </button>
+//         <button id='pause' onClick={this.pause}>
+//           Pause
+//         </button>
+//         <button id='stop' onClick={this.stop}>
+//           Stop
+//         </button>
+//       </div>
+//     )
+//   }
+// }
+
+// export default RecordVoice
