@@ -10,18 +10,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends React.Component{
-  constructor(props) {
-    super(props)
-    this.state = {
-      atInstructionPage: false,
-      atPlayPage: false,
-      atRecordPage: false,
-      atThanksPage: false
-    }
-  }
 
-  // startApp = () => {
-  //   let 
+  componentDidMount(){
+    document.title = "Alpaca voice test"
+  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     atInstructionPage: false,
+  //     atPlayPage: false,
+  //     atRecordPage: false,
+  //     atThanksPage: false
+  //   }
   // }
 
 
