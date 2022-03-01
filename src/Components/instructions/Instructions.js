@@ -2,7 +2,7 @@ import React from "react";
 import {Card, Container, Row, Col} from 'react-bootstrap';
 import InstructionsCard from "./InstructionsCard";
 
-import './Instructions.css';
+import '../../Assets/styles/instructions/Instructions.css';
  
 class Instructions extends React.Component {
 

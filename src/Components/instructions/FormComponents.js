@@ -2,19 +2,19 @@ import React from "react";
 import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-import './FormComponents.css';
+import '../../Assets/styles/instructions/FormComponents.css';
 
 class FormComponents extends React.Component {
     
     state = {
-        disabled : true
+        buttonDisabled : true
     }
 
     handleCheck(event) {
         if(event.target.checked) {
             this.setState(
                 {
-                    disabled : false
+                    buttonDisabled : false
                 }
             );
         }
@@ -22,7 +22,7 @@ class FormComponents extends React.Component {
         else {
             this.setState(
                 {
-                    disabled : true
+                    buttonDisabled : true
                 }
             );
         }
@@ -42,7 +42,7 @@ class FormComponents extends React.Component {
                 </div>
                    <div>
            <Link to="/playVoice">
-                <Button className='start-button' disabled = {this.state.disabled}> شرکت در تست </Button>            
+                <Button className='start-button' disabled = {this.state.buttonDisabled}> شرکت در تست </Button>            
            </Link>
            </div>
            </Form>

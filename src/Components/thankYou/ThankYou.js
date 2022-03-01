@@ -1,7 +1,7 @@
 import React from "react";
 import Card from 'react-bootstrap/Card'
 
-import './ThankYou.css'
+import '../../Assets/styles/thankYou/ThankYou.css'
 
 
 class ThankYou extends React.Component {

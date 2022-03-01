@@ -1,10 +1,10 @@
 import React from 'react';
-import NavigationBar from './Navbar';
-import Instructions from './instructionsPage/Instructions';
-import PlayVoice from './playVoicePage/PlayVoice';
-import RecordVoice from './recordVoice/RecordVoice';
-import ThankYou from './thankYou/ThankYou';
-import {BrowserRouter, Link, Routes , Route } from 'react-router-dom';
+import NavigationBar from './Components/navbar/Navbar';
+import Instructions from './Components/instructions/Instructions';
+import PlayVoice from './Components/playVoice/PlayVoice';
+import RecordVoice from './Components/recordVoice/RecordVoice';
+import ThankYou from './Components/thankYou/ThankYou';
+import {Routes , Route } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';

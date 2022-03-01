@@ -2,7 +2,7 @@ import React from "react";
 import {Card} from 'react-bootstrap';
 import FormComponents from "./FormComponents";
 
-import './InstructionsCard.css';
+import '../../Assets/styles/instructions/InstructionsCard.css';
 
 export default function InstructionsCard() {
     return (

@@ -1,10 +1,9 @@
 import React from "react";
 import AudioReactRecorder, { RecordState } from 'audio-react-recorder';
-import ReactAudioPlayer from 'react-audio-player';
 import {Card, Button, Image} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
  
-import './RecordVoice.css'
+import '../../Assets/styles/recordVoice/RecordVoice.css'
 
 class RecordVoice extends React.Component {
     constructor(props) {
@@ -77,10 +76,10 @@ class RecordVoice extends React.Component {
                 {this.state.recordState===RecordState.START &&
                 <div>
                 <Image 
-                src={require('../images/recordGif.gif')} 
-                alt="voice" 
+                src={require('../../Assets/images/recordGif.gif')} 
+                alt="Responsive image"
                 width="120"
-                className="mx-auto d-block" alt="Responsive image"
+                className="mx-auto d-block" 
                 />
                 <Button className='stopButton'
                 onClick={this.stop}

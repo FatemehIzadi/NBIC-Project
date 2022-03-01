@@ -1,9 +1,9 @@
 import React from "react";
-import Story from '../voice/story1.mp3';
+import Story from '../../Assets/voice/story1.mp3';
 import { Card, Button, Image } from 'react-bootstrap';
 import  { Navigate } from 'react-router-dom';
 
-import './PlayVoice.css';
+import '../../Assets/styles/playVoice/PlayVoice.css';
 
 class PlayVoice extends React.Component {
 
@@ -58,10 +58,10 @@ class PlayVoice extends React.Component {
             {this.state.isPlaying && !this.state.hasEnded &&
             <div className="voiceImage">
                 <Image 
-                src={require('../images/playGif.gif')} 
-                alt="voice" 
+                src={require('../../Assets/images/playGif.gif')} 
+                alt="Responsive image"
                 width="120"
-                className="mx-auto d-block" alt="Responsive image"
+                className="mx-auto d-block" 
                 />
             </div>
             }

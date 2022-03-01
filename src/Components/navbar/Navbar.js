@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar, Container, Nav} from 'react-bootstrap';
 import Image from 'react-bootstrap/Image'
 
-import './Navbar.css';
+import '../../Assets/styles/navbar/Navbar.css';
 export default function NavigationBar() {
     return(
         <div>
@@ -10,7 +10,7 @@ export default function NavigationBar() {
             <Container>
                 <Navbar.Brand className="order-md-last" href="https://utnbic.ir/">
                      <Image 
-                    src={require('./images/nbiclogo.png')} 
+                    src={require('../../Assets/images/nbiclogo.png')} 
                     alt="nbic logo" 
                     width="50"
                     className="d-inline-block align-top"
